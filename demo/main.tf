@@ -28,3 +28,4 @@ module "server" {
   pemfile = var.mykey
   source = "../instances"
 }
+

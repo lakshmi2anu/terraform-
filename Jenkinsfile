@@ -23,12 +23,11 @@ stages{
     }
   }
   stage('Checkov Scan'){
-    when { branch 'dev'}
     steps {
       catchError(buildResult: 'SUCCESS', message: 'IAC Misconfigurations found', stageResult: 'UNSTABLE')
       {
 	      dir('./demo') {
-                       sh 'checkov -f testplan.json'
+                       sh '/home/ubuntu/.local/bin/checkov -f testplan.json'
         }
       }
     }

@@ -1,5 +1,6 @@
 ---
-- hosts: "{{server}}"
+- hosts: localhost
+  connection: local
   become: true
   tasks:
   - name: Update and upgrade apt packages
@@ -16,4 +17,4 @@
       - python3-pip
       - pipx
   - name: Install checkov
-    command: pipx checkov
+    command: pipx install checkov
