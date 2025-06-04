@@ -27,7 +27,8 @@ stages{
       catchError(buildResult: 'SUCCESS', message: 'IAC Misconfigurations found', stageResult: 'UNSTABLE')
       {
 	      dir('./demo') {
-                       sh '/home/ubuntu/.local/bin/checkov -f testplan.json'
+                      // sh '/home/ubuntu/.local/bin/checkov -f testplan.json'
+              sh 'sudo /root/.local/share/pipx/venvs/checkov/bin/checkov -f testplan.json'
         }
       }
     }
