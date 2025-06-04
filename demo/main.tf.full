@@ -1,3 +1,8 @@
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#
+
 provider "aws" {
   region = "ap-south-1"
 }
@@ -11,9 +16,10 @@ locals {
 }
 
 module "elb" {
-  source = "../../terraform_modules/loadbalancer"
+  source = "../../terraform-modules/loadbalancer"
+  
+  vpc_id = "vpc-01cb1bc7e3d81f545"
 
-  vpc_id = "vpc-08b3ea433e2014c6a"
   internal        = false
 
   sg_public_ingress = [
@@ -24,9 +30,9 @@ module "elb" {
     },
   ]
 
-  sg_public_egress  =  [443]
+  sg_public_egress  =  [443,8080]
 
-  subnets         = ["subnet-0b134c01fd2ce1ece", "subnet-0e15e72c9967f4bd1","subnet-0e56ccfe47eb41d47"]
+  subnets         = ["subnet-0213e27a9c4333d5c", "subnet-0aa98230ab963bdc8","subnet-03042d2319cd3310c"]
 
   listener = [
     {
@@ -39,7 +45,7 @@ module "elb" {
   ]
 
   health_check = {
-     target              = "HTTP:8080/"
+     target              = "TCP:8080"
      interval            = 30
      healthy_threshold   = 2
      unhealthy_threshold = 2
@@ -52,7 +58,7 @@ module "autoscaling" {
 
   depends_on = [module.elb]
   create_launch_template = true
-  vpc_zone_identifier       = ["subnet-0b134c01fd2ce1ece", "subnet-0e15e72c9967f4bd1","subnet-0e56ccfe47eb41d47"]
+  vpc_zone_identifier       = ["subnet-0213e27a9c4333d5c", "subnet-0aa98230ab963bdc8","subnet-03042d2319cd3310c"]
   load_balancers            = ["wezvatech"]
   min_size                  = 1
   max_size                  = 2
@@ -61,9 +67,15 @@ module "autoscaling" {
   health_check_grace_period = 30
 
   launch_template_name        = "example-asg"
-  image_id          = "ami-0a7cf821b91bcccbc"
-  key_name          = "jan24master"
+  image_id          = "ami-002f6e91abff6eb96"
+  key_name          = "wezvatech2025"
   instance_type     = "t3.micro"
   user_data         = base64encode(local.user_data)
-  security_groups   = ["sg-024da43ccf9b0816d"]
+  security_groups   = ["sg-0fed46a4bd7b55975"]
+
 }
+
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#

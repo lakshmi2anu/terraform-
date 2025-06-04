@@ -1,3 +1,8 @@
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#
+
 variable "create_elb" {
   description = "Create the elb or not"
   type        = bool
@@ -83,3 +88,8 @@ variable "health_check" {
   description = "A health check block"
   type        = map(string)
 }
+
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#

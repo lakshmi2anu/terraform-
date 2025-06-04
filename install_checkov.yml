@@ -1,3 +1,8 @@
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#
+
 ---
 - hosts: "{{server}}"
   become: true
@@ -17,3 +22,8 @@
       - pipx
   - name: Install checkov
     command: pipx checkov
+
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#

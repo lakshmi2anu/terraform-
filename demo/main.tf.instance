@@ -1,8 +1,12 @@
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#
+
 # ------------------------------------------------------------------- #
 # Use this project to provision EC2 servers
 # Map variable defines the details of each server you are provisioning
-#    Name/Tag of the server = Type of the server
-# AUTHOR: ADAM M | +91-9739110917 (WhatsApp/Call)
+# Name/Tag of the server = Type of the server
 # ------------------------------------------------------------------- #
 
 provider "aws" {
@@ -28,3 +32,8 @@ module "server" {
   pemfile = var.mykey
   source = "./modules/instances"
 }
+
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#

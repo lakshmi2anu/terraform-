@@ -1,3 +1,8 @@
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#
+
 variable "amiid" {
   default = "ami-08e5424edfe926b43"
 }
@@ -18,3 +23,8 @@ variable "volsize" {
 variable "servername" {
   default = "demoserver"
 }
+
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#

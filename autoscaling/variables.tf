@@ -1,3 +1,8 @@
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#
+
 variable "name" {
   description = "Name used across the resources created"
   type        = string
@@ -94,4 +99,7 @@ variable "load_balancers" {
   default     = []
 }
 
-
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#

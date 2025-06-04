@@ -1,3 +1,8 @@
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#
+
 # VPC Variables
 variable "name" {
   description = "Name to be used on all the resources as identifier"
@@ -92,3 +97,7 @@ variable "external_nat_ip_ids" {
   default     = []
 }
 
+#---------------------------------------------#
+# Author: Adam WezvaTechnologies
+# Call/Whatsapp: +91-9739110917
+#---------------------------------------------#
